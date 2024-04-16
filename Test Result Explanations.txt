@@ -1,0 +1,25 @@
+#We validate tests using lists of known responses which are called assertions
+
+#The below test commands are all passing to see examples of passing tests
+
+#The next command line below is for verbose. Verbose lists the names of the tests performed. It this example it lists test_list_int which tests that a list of integers can be summed. This test passes in the terminal with "ok".
+#It runs the 1 test we have added inside the test.py file at this time 
+
+python -m unittest -v test
+
+#The command below requests automatic discovery and searches the full directory of our project
+#for any files named test*.py (files that follow the test naming convention) 
+
+python -m unittest discover 
+
+#The below -s command allows us to include the name of the directory (new directory of all the tests named tests) 
+python -m unittest discover -s tests
+
+
+#Experiment with failing tests to understand failing output. After we added the fractions test to expect an 
+#incorrect answer we run the test (python_-m unittest_test) in the command line again to see an example of a failed test:
+
+F. shows us that of the 2 test ran from our test file, one test failed (F) and one test passed(.)
+
+We can see in the output the method named test_list_fraction failed because the expected result was 1, but obtain 
+fraction (Fraction(9, 10)) instead. We receive the assertion error: AssertionError: Fraction(9, 10) != 1
